@@ -2,6 +2,7 @@ class Processus:
     def __init__(self, nom, voisins):
         self.name = nom
         self.voisins = voisins
+        self.statut = 1 # 1 = actif, 0 = en panne
 
     def envoyer(self, destinataire, contenu):
         # todo
@@ -29,6 +30,16 @@ class Processus:
 
 class Reseau:
     def __init__(self, processus, graine, delai_max):
-        self.processus = {}
+        self.processus = processus
         self.graine = graine
         self.delai_max = delai_max
+        self.file_evenements = []
+        self.messages = 0
+        self.pannes = []
+        
+
+    def executer(self, initiateurs):
+        # todo
+        pass
+
+    
